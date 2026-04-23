@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 10;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* TOPO */
+.topo {
+  padding: 60px 32px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.topo-tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 10px;
+}
+
+.topo h1 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.topo-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* FILTROS */
+.filtros {
+  display: flex;
+  gap: 8px;
+  padding: 20px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow-x: auto;
+}
+
+.filtro {
+  padding: 7px 18px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.4);
+  border-radius: 100px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.filtro:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.filtro.ativo {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* CARD */
+.card {
+  background: #000;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.card:hover {
+  background: #111;
+}
+
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marca {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.marca.hot {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.fav {
+  font-size: 16px;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+}
+
+.fav:hover {
+  color: #ff5555;
+}
+
+.imagem {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #111;
+  border-radius: 8px;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nome {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preco {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-add {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: #fff;
+  color: #000;
+}
+
+.card.destaque {
+  background: #0a0a0a;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 36px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  header { padding: 16px 20px; }
+  nav { display: none; }
+  .topo { padding: 40px 20px 30px; }
+  .filtros { padding: 14px 20px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Imagens nos cards */
+.imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 8px;
+}
